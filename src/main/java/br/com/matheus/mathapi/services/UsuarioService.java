@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.matheus.mathapi.models.Usuario;
+import br.com.matheus.mathapi.domain.Usuario;
 import br.com.matheus.mathapi.repositories.UsuarioRepository;
 import br.com.matheus.mathapi.services.exceptions.ResourceNotFoundException;
 

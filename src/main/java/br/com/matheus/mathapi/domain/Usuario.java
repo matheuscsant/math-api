@@ -1,4 +1,4 @@
-package br.com.matheus.mathapi.models;
+package br.com.matheus.mathapi.domain;
 
 import java.io.Serializable;
 import java.util.Objects;
