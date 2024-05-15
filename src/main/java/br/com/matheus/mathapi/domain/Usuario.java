@@ -1,16 +1,29 @@
 package br.com.matheus.mathapi.domain;
 
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Entity()
-public class Usuario implements Serializable {
+@Entity
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
+public class Usuario implements UserDetails, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,71 +31,48 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotBlank
-	private String username;
+	private String login;
 	@NotBlank
-	private String role;
+	private String password;
+	@NotBlank
+	private int role;
 
-	private Usuario() {
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		if (this.role == UsuarioRole.ADMIN.getRole())
+			return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+		else
+			return List.of(new SimpleGrantedAuthority("ROLE_USER"));
 	}
 
-	private Usuario(UsuarioBuilder builder) {
-		super();
-		this.username = builder.username;
-		this.role = builder.role;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
+	@Override
 	public String getUsername() {
-		return username;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public static class UsuarioBuilder {
-		private String username;
-		private String role;
-
-		public UsuarioBuilder setUsername(String username) {
-			this.username = username;
-			return this;
-		}
-
-		public UsuarioBuilder setRole(String role) {
-			this.role = role;
-			return this;
-		}
-
-		public Usuario builder() {
-			return new Usuario(this);
-		}
-
+		return login;
 	}
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(id, role, username);
+	public String getPassword() {
+		return password;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Usuario other = (Usuario) obj;
-		return Objects.equals(id, other.id) && Objects.equals(role, other.role) && Objects.equals(username, other.username);
+	public boolean isAccountNonExpired() {
+		return true;
 	}
 
 	@Override
-	public String toString() {
-		return "Usuario [id=" + id + ", username=" + username + ", role=" + role + "]";
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
 	}
 
 }

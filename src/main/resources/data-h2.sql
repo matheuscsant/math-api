@@ -1,23 +1,14 @@
-insert into usuario (username, role) values ('Raviv', 'Estimator');
-insert into usuario (username, role) values ('Manon', 'Estimator');
-insert into usuario (username, role) values ('Eleanore', 'Project Manager');
-insert into usuario (username, role) values ('Karl', 'Construction Worker');
-insert into usuario (username, role) values ('Iolanthe', 'Construction Worker');
-insert into usuario (username, role) values ('Starlin', 'Engineer');
-insert into usuario (username, role) values ('Jeromy', 'Construction Expeditor');
-insert into usuario (username, role) values ('Sergei', 'Construction Foreman');
-insert into usuario (username, role) values ('Ardra', 'Estimator');
-insert into usuario (username, role) values ('Carlee', 'Construction Manager');
-insert into usuario (username, role) values ('Frannie', 'Architect');
-insert into usuario (username, role) values ('Cathee', 'Estimator');
-insert into usuario (username, role) values ('Rowney', 'Engineer');
-insert into usuario (username, role) values ('Faber', 'Construction Foreman');
-insert into usuario (username, role) values ('Marve', 'Supervisor');
-insert into usuario (username, role) values ('Onfroi', 'Subcontractor');
-insert into usuario (username, role) values ('Bridget', 'Engineer');
-insert into usuario (username, role) values ('Tomas', 'Engineer');
-insert into usuario (username, role) values ('Byram', 'Electrician');
-insert into usuario (username, role) values ('Law', 'Construction Foreman');
+insert into Usuario (login, password, role) values ('cmontilla0', 'mQ2~6JuC', 1);
+insert into Usuario (login, password, role) values ('awillgrass1', 'eM1/>pgzYpC9+', 1);
+insert into Usuario (login, password, role) values ('blodevick2', 'iZ8$IMzo1,q2qtjo', 1);
+insert into Usuario (login, password, role) values ('msennett3', 'hF4.C,sf', 2);
+insert into Usuario (login, password, role) values ('cdelcastello4', 'lF7+umDCvf', 2);
+insert into Usuario (login, password, role) values ('gkingswell5', 'dZ8.*V<6`<(p', 2);
+insert into Usuario (login, password, role) values ('jmuriel6', 'fJ2)s%9McWtyFS', 2);
+insert into Usuario (login, password, role) values ('jbennison7', 'iN5|@+PY(A', 2);
+insert into Usuario (login, password, role) values ('jgarrould8', 'xX6)r?JItuq5', 2);
+insert into Usuario (login, password, role) values ('acharlick9', 'qP2<)jV4', 2);
+
 
 
 insert into Produto (name, price) values ('Trout - Smoked', 27);
