@@ -13,15 +13,23 @@
   - [x] Desenvolver handler para ResourceNotFound
   - [ ] Implementar sistemática do Spring Security com JWT
   - [ ] Configurar perfis de desenvolvimento
+      - [x] Perfil de teste
+      - [ ] Perfil de dev
+      - [ ] Perfil de prod
 - [ ] Desenvolver o App
 - [ ] Estrutura banco de dados em memória (H2)
 - [ ] Estruturar banco de dados local (PostgreSQL)
 
 ## Endpoint desenvolvidos
 
-- Url base: http://localhost:8080
+- Url base para teste da api: http://localhost:8080
+- Url para requisições estando na mesma rede local: IP da máquina:8080
+    - Podemos verificar rodando o comando `ipconfig` no cmd, é o endereço IPv4
 
-| Endpoint         | Descrição                                            |
-| ---------------- | ---------------------------------------------------- |
-| `/usuarios`      | Retorna todos os usuário que tem no banco            |
-| `/usuarios/{id}` | Retorna um usuário ou uma exception ResourceNotFound |
+| Endpoint         | Tipo  | Descrição                                                                      |
+| ---------------- | :---: | ------------------------------------------------------------------------------ |
+| `/usuarios`      |  GET  | Retorna todos os usuário que tem no banco                                      |
+| `/usuarios/{id}` |  GET  | Retorna um usuário ou uma exception ResourceNotFound                           |
+| `/produtos`      |  GET  | Retorna todos os produtos que tem no banco                                     |
+| `/produtos/{id}` |  GET  | Retorna um produto ou uma exception ResourceNotFound                           |
+| `/produtos`      | POST  | Necessário passar no body, um novo produto, será retornado no header o caminho |
