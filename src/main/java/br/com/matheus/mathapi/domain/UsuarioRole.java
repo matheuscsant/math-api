@@ -4,21 +4,21 @@ import java.util.Arrays;
 
 public enum UsuarioRole {
 
-	ADMIN(1), USER(2);
+	ADMIN("ADMIN"), USER("USER");
 
-	int role;
+	String role;
 
-	UsuarioRole(int role) {
+	UsuarioRole(String role) {
 		this.role = role;
 	}
 
-	public int getRole() {
+	public String getRole() {
 		return role;
 	}
 
-	public static UsuarioRole valueOf(int codigo) {
-		return Arrays.asList(UsuarioRole.values()).stream().filter(role -> role.getRole() == codigo).findFirst()
-				.orElseThrow(() -> new IllegalArgumentException("Invalid user role code"));
+	public static UsuarioRole valueOfUsuario(String otherRole) {
+		return Arrays.asList(UsuarioRole.values()).stream().filter(role -> role.getRole().equalsIgnoreCase(otherRole))
+				.findFirst().orElseThrow(() -> new IllegalArgumentException("Invalid user role"));
 	}
 
 }

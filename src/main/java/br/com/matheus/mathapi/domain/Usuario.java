@@ -14,12 +14,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -35,11 +37,11 @@ public class Usuario implements UserDetails, Serializable {
 	@NotBlank
 	private String password;
 	@NotBlank
-	private int role;
+	private String role;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		if (this.role == UsuarioRole.ADMIN.getRole())
+		if (this.role.equalsIgnoreCase(UsuarioRole.ADMIN.getRole()))
 			return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
 		else
 			return List.of(new SimpleGrantedAuthority("ROLE_USER"));

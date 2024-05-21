@@ -1,13 +1,15 @@
-insert into Usuario (login, password, role) values ('cmontilla0', 'mQ2~6JuC', 1);
-insert into Usuario (login, password, role) values ('awillgrass1', 'eM1/>pgzYpC9+', 1);
-insert into Usuario (login, password, role) values ('blodevick2', 'iZ8$IMzo1,q2qtjo', 1);
-insert into Usuario (login, password, role) values ('msennett3', 'hF4.C,sf', 2);
-insert into Usuario (login, password, role) values ('cdelcastello4', 'lF7+umDCvf', 2);
-insert into Usuario (login, password, role) values ('gkingswell5', 'dZ8.*V<6`<(p', 2);
-insert into Usuario (login, password, role) values ('jmuriel6', 'fJ2)s%9McWtyFS', 2);
-insert into Usuario (login, password, role) values ('jbennison7', 'iN5|@+PY(A', 2);
-insert into Usuario (login, password, role) values ('jgarrould8', 'xX6)r?JItuq5', 2);
-insert into Usuario (login, password, role) values ('acharlick9', 'qP2<)jV4', 2);
+insert into Usuario (login, password, role) values ('cmontilla0', 'mQ2~6JuC', 'ADMIN');
+insert into Usuario (login, password, role) values ('awillgrass1', 'eM1/>pgzYpC9+', 'ADMIN');
+insert into Usuario (login, password, role) values ('blodevick2', 'iZ8$IMzo1,q2qtjo', 'ADMIN');
+insert into Usuario (login, password, role) values ('msennett3', 'hF4.C,sf', 'USER');
+insert into Usuario (login, password, role) values ('cdelcastello4', 'lF7+umDCvf', 'USER');
+insert into Usuario (login, password, role) values ('gkingswell5', 'dZ8.*V<6`<(p', 'USER');
+insert into Usuario (login, password, role) values ('jmuriel6', 'fJ2)s%9McWtyFS', 'USER');
+insert into Usuario (login, password, role) values ('jbennison7', 'iN5|@+PY(A', 'USER');
+insert into Usuario (login, password, role) values ('jgarrould8', 'xX6)r?JItuq5', 'USER');
+insert into Usuario (login, password, role) values ('acharlick9', 'qP2<)jV4', 'USER');
+insert into Usuario (login, password, role) values ('matheuscsant', '$2a$10$9QJ8DD3Ohcdfuki2qEdQfOnUwb/eY2qruBOeNokD.uZqyW.XzvJg6', 'ADMIN');
+insert into Usuario (login, password, role) values ('matheuscsantuser', '$2a$10$h4AjAPX.Zy8zIoWPlbBMlei82BXjeyGf9D5cBoi5epaLli98CHScm', 'USER');
 
 
 
