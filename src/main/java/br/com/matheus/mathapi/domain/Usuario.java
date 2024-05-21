@@ -9,6 +9,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -37,11 +39,12 @@ public class Usuario implements UserDetails, Serializable {
 	@NotBlank
 	private String password;
 	@NotBlank
-	private String role;
+	@Enumerated(EnumType.STRING)
+	private UsuarioRole role;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		if (this.role.equalsIgnoreCase(UsuarioRole.ADMIN.getRole()))
+		if (this.role == UsuarioRole.ADMIN)
 			return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
 		else
 			return List.of(new SimpleGrantedAuthority("ROLE_USER"));

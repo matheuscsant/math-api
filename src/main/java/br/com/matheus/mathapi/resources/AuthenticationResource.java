@@ -45,8 +45,7 @@ public class AuthenticationResource {
 			return ResponseEntity.badRequest().build();
 
 		String encryptedPassoword = new BCryptPasswordEncoder().encode(dto.password());
-		Usuario newUser = Usuario.builder().login(dto.login()).password(encryptedPassoword).role(dto.role().getRole())
-				.build();
+		Usuario newUser = Usuario.builder().login(dto.login()).password(encryptedPassoword).role(dto.role()).build();
 
 		userRepository.save(newUser);
 
