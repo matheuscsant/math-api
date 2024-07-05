@@ -1,5 +1,6 @@
 package br.com.matheus.mathapi.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +29,11 @@ public class ProdutoService {
 		Produto createdProduto = repository.save(produto);
 		return createdProduto;
 	}
+
+	public void createProducts(List<Produto> products) {
+		repository.deleteAll();
+		List<Produto> createdProducts = new ArrayList<>();
+		products.forEach(p -> createdProducts.add(repository.save(p)));
+	}
+
 }
