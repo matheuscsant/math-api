@@ -19,8 +19,13 @@ public class Produto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
+	private Integer codigoAlternativo;
+
 	private String name;
+
+	@Column(nullable = true)
+	private String tabelaDePreco;
 
 	public Produto() {
 	}
@@ -42,12 +47,28 @@ public class Produto implements Serializable {
 		this.id = id;
 	}
 
+	public Integer getCodigoAlternativo() {
+		return codigoAlternativo;
+	}
+
+	public void setCodigoAlternativo(Integer codigoAlternativo) {
+		this.codigoAlternativo = codigoAlternativo;
+	}
+
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getTabelaDePreco() {
+		return tabelaDePreco;
+	}
+
+	public void setTabelaDePreco(String tabelaDePreco) {
+		this.tabelaDePreco = tabelaDePreco;
 	}
 
 }

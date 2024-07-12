@@ -31,9 +31,12 @@ public class ProdutoService {
 	}
 
 	public void createProducts(List<Produto> products) {
-		repository.deleteAll();
 		List<Produto> createdProducts = new ArrayList<>();
 		products.forEach(p -> createdProducts.add(repository.save(p)));
+	}
+
+	public void deleteAllProducts() {
+		repository.deleteAll();
 	}
 
 }

@@ -60,7 +60,7 @@ class ProdutoRepositoryTest {
 
 	}
 
-	@DisplayName("Given person object when save then return saved person")
+	@DisplayName("Given product object when save then return saved product")
 	@Test
 	void testGivenProductObject_whenSave_thenReturnProductPerson() {
 		// When / Act
@@ -71,9 +71,9 @@ class ProdutoRepositoryTest {
 		assertTrue(savedProduct.getId() > 0);
 	}
 
-	@DisplayName("Given person object when save then return saved person")
+	@DisplayName("Given product list when find all then return product list")
 	@Test
-	void testGivenPersonList_whenFindAll_thenReturnPersonList() {
+	void testGivenProductList_whenFindAll_thenReturnProductList() {
 		// Given / Arrange
 		Produto produto1 = new Produto(2L, "Produto");
 
@@ -88,9 +88,9 @@ class ProdutoRepositoryTest {
 		assertEquals(productList.size(), 2);
 	}
 
-	@DisplayName("Given person object when delete person then remove person")
+	@DisplayName("Given product object when delete product then remove product")
 	@Test
-	void testGivenPersonObject_whenDeletePerson_thenRemovePerson() {
+	void testGivenProductObject_whenDeleteProduct_thenRemoveProduct() {
 
 		// When / Act
 		repository.deleteById(savedProduto.getId());
