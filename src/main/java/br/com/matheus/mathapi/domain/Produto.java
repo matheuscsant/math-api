@@ -27,6 +27,9 @@ public class Produto implements Serializable {
 	@Column(nullable = true)
 	private String tabelaDePreco;
 
+	@Column(name = "valor_produto", columnDefinition = "double precision default '0'")
+	private double valorProduto = 0.0;
+
 	public Produto() {
 	}
 
@@ -69,6 +72,14 @@ public class Produto implements Serializable {
 
 	public void setTabelaDePreco(String tabelaDePreco) {
 		this.tabelaDePreco = tabelaDePreco;
+	}
+
+	public double getValorProduto() {
+		return valorProduto;
+	}
+
+	public void setValorProduto(double valorProduto) {
+		this.valorProduto = valorProduto;
 	}
 
 }
